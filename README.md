@@ -70,7 +70,12 @@ source .venv/bin/activate   # Linux/macOS
 
 # 3. Установить зависимости
 pip install -r requirements.txt
-```
+
+## Проверка качества кода
+
+bash
+flake8 src tests
+pytest
 
 ## Данные
 
@@ -100,3 +105,4 @@ pip install -r requirements.txt
 ## Отчёт
 
 Финальный отчёт: [`report/report.md`](report/report.md)
+```
