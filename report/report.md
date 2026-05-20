@@ -112,7 +112,57 @@ PCA (уменьшение размерности)
 ## 7. Деплой
 
 - **Интерфейс:** если требуется по задаче (Streamlit, Telegram-бот и т.д.)
-- **API:** FastAPI или аналог - описание эндпоинтов, примеры запросов
+- **API:** Реализовано с помощью FastAPI. Endpoiint (POST/predict) принимает геометрические и топологические признаки 3Д-меша и возвращает предсказанный класс качества.
+<details>
+<summary>Пример проводимого мной тестового запроса: </summary>
+{
+  "num_vertices": 1000,
+  "num_faces": 2000,
+  "num_combinatorial_degenerated_faces": 0,
+  "num_connected_components": 1,
+  "euler_characteristic": 2,
+  "num_coplanar_intersecting_faces": 0,
+  "vertex_manifold": 1,
+  "edge_manifold": 1,
+  "oriented": 1,
+  "total_area": 100,
+  "min_area": 0.1,
+  "p25_area": 0.5,
+  "median_area": 1.0,
+  "p75_area": 1.5,
+  "p90_area": 2.0,
+  "p95_area": 2.5,
+  "max_area": 5.0,
+  "min_valance": 3,
+  "p25_valance": 4,
+  "median_valance": 5,
+  "p75_valance": 6,
+  "p90_valance": 7,
+  "p95_valance": 8,
+  "max_valance": 10,
+  "min_dihedral_angle": 10,
+  "p25_dihedral_angle": 20,
+  "median_dihedral_angle": 30,
+  "p75_dihedral_angle": 40,
+  "p90_dihedral_angle": 50,
+  "p95_dihedral_angle": 60,
+  "max_dihedral_angle": 90,
+  "min_aspect_ratio": 1,
+  "p25_aspect_ratio": 1.2,
+  "median_aspect_ratio": 1.5,
+  "p75_aspect_ratio": 2.0,
+  "p90_aspect_ratio": 2.5,
+  "p95_aspect_ratio": 3.0,
+  "max_aspect_ratio": 5.0,
+  "PWN": 1,
+  "solid": 1,
+  "ave_area": 1.2,
+  "ave_valance": 5,
+  "ave_dihedral_angle": 35,
+  "ave_aspect_ratio": 1.8
+}
+</details>
+
 - **Скриншоты** работы интерфейса/API
 - **Ссылка на видео** демонстрации работы
 
