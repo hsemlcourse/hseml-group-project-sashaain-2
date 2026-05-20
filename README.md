@@ -22,6 +22,7 @@
 **Задача:** многоклассовая классификация
 
 **Датасет:** набор данных с характеристиками 3D-мешей, найденный на Hugging Face
+Ссылка: https://huggingface.co/datasets/Thingi10K/Thingi10K
 
 **Целевая метрика:** Macro F1-score
 
@@ -33,6 +34,13 @@ Macro F1-score был выбран основной метрикой, так к�
 
 ```
 .
+├── app
+│   ├── json_input.py           # Логика загрузки JSON файлов
+│   ├── main.py                 # FastAPI приложение
+│   ├── manual_input.py         # Интерфейс ручного ввода признаков
+│   ├── schemas.py              # Cхемы запросов
+│   ├── streamlit_app.py        # Streamlit интерфейс
+│   └── utils.py                #Вспомогательные функции
 ├── data
 │   ├── processed               # Очищенные и обработанные данные
 │   └── raw                     # Исходные файлы
@@ -50,6 +58,7 @@ Macro F1-score был выбран основной метрикой, так к�
 │   └── modeling.py             # Обучение и оценка моделей
 ├── tests
 │   └── test.py                 # Тесты пайплайна
+│   └── test_features.json      # Тестовый JSON файл
 ├── requirements.txt
 └── README.md
 ```
@@ -58,24 +67,44 @@ Macro F1-score был выбран основной метрикой, так к�
 
 Этот блок замените способом запуска вашего сервиса.
 
-```bash
 # 1. Клонировать репозиторий
-git clone <url>
-cd <repo-name>
+
+```bash
+
+git clone <repository_url>
+cd <repository_name>
+
+```
 
 # 2. Создать виртуальное окружение
+
+```bash
 python -m venv .venv
-source .venv/bin/activate   # Linux/macOS
-# .venv\Scripts\activate    # Windows
+source .venv/bin/activate # Linux/macOS
+.venv\Scripts\activate # Windows
+```
 
 # 3. Установить зависимости
+
+```bash
 pip install -r requirements.txt
+```
 
-## Проверка качества кода
+# FastAPI
 
-bash
-flake8 src tests
-pytest
+## Запуск API
+
+```bash
+uvicorn app.main:app --reload
+```
+
+# Streamlit интерфейс
+
+## Запуск Streamlit
+
+```bash
+streamlit run app/streamlit_app.py
+```
 
 ## Данные
 
@@ -105,4 +134,3 @@ pytest
 ## Отчёт
 
 Финальный отчёт: [`report/report.md`](report/report.md)
-```
