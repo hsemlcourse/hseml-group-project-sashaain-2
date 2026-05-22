@@ -165,6 +165,12 @@
 </details>
 
 - **Скриншоты** работы интерфейса/API
+  Скриншоты интерфейса на Streamlit:
+  ![Main screen](images/main_screen.png)
+  ![Class_probabilities](images/class_probabilities.png)
+  ![Mesh quality radar](images/radar.png)
+  ![Important features/statistics](images/tables.png)
+
 - **Ссылка на видео** демонстрации работы
 
 ---

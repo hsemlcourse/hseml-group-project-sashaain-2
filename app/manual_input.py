@@ -1,11 +1,13 @@
 import streamlit as st
 import requests
 
+from utils import display_prediction_results
+
 
 def render_manual_input():
 
     st.subheader("Basic mesh features")
-    
+
     solid = st.selectbox(
         "Solid mesh",
         [0, 1],
@@ -55,9 +57,12 @@ def render_manual_input():
     )
 
 
-# ADVANCED 
+    # ADVANCED
 
-    show_all = st.checkbox("Specify all 44 features")
+    show_all = st.checkbox(
+        "Specify all 44 features"
+    )
+
     num_combinatorial_degenerated_faces = 0
     num_connected_components = 1
     euler_characteristic = 2
@@ -173,7 +178,7 @@ def render_manual_input():
             min_value=0.0,
             value=5.0
         )
-        
+
         min_valance = st.number_input(
             "Minimum valance",
             min_value=0,
@@ -374,7 +379,7 @@ def render_manual_input():
 
         prediction = response.json()
 
-        st.success(
-            f"Predicted quality class: "
-            f"{prediction['predicted_quality_class']}"
+        display_prediction_results(
+            prediction,
+            payload
         )
