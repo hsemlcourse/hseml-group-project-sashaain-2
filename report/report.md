@@ -171,7 +171,7 @@
   ![Mesh quality radar](images/radar.png)
   ![Important features/statistics](images/tables.png)
 
-- **Ссылка на видео** демонстрации работы
+- **Ссылка на видео** видео демонстрации работы FastAPI и Streamlit загружено в репозиторий и помещено в папку /report (fastAPI_streamlit.mov)
 
 ---
 
